@@ -56,7 +56,7 @@ const Login = () => {
 				</form>
 
 				<p>
-					Alredy Registed? <Link to='/registration'>Register</Link>
+					Already Registed? <Link to='/registration'>Register</Link>
 				</p>
 			</div>
 		</div>
