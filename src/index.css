@@ -7,3 +7,12 @@ body {
 
 	font-family: 'Lato', sans-serif;
 }
+
+button {
+	font-size: large;
+	background-color: darkgrey;
+	border: 0;
+	border-radius: 10px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
