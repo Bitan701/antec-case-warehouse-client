@@ -1,0 +1,18 @@
+.navbar {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	background-color: chartreuse;
+	-webkit-box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.8);
+}
+.navbar-links a {
+	text-decoration: none;
+}
+.navbar-links {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1rem;
+}
