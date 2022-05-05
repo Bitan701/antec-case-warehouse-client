@@ -1,0 +1,14 @@
+.product {
+	width: 350px;
+	background-color: aqua;
+	margin: 5rem 0;
+	padding: 2rem 2rem;
+	border-radius: 10px;
+}
+
+.product-top {
+	text-align: center;
+}
+
+.product-top img {
+}

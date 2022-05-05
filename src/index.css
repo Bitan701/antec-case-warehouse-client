@@ -34,3 +34,8 @@ button:hover {
 button::after {
 	transform: scale(98);
 }
+
+.products {
+	display: grid;
+	place-items: center;
+}
