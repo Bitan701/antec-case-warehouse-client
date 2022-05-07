@@ -1,10 +1,18 @@
+import { useNavigate } from 'react-router-dom'
 import './Product.css'
 
 const Product = ({ product }) => {
-	const { name, weight, img, price, warranty } = product
+	const { _id, name, weight, img, price, warranty } = product
 	const { dimension, formFactor, materials, sidePanel } =
 		product.caseSpecification
 	const { front, side, rear, top } = product.fanSupport
+
+	const navigate = useNavigate()
+
+	const navigateToServiceDetail = (id) => {
+		navigate(`/products/${id}`)
+	}
+
 	return (
 		<div className='product'>
 			<div className='product-top'>
@@ -33,6 +41,12 @@ const Product = ({ product }) => {
 				<p>Weight: {weight} </p>
 				<p>Warranty: {warranty} </p>
 			</div>
+			<button
+				onClick={() => navigateToServiceDetail(_id)}
+				className='btn btn-primary'
+			>
+				Book: {name}
+			</button>
 		</div>
 	)
 }

@@ -3,6 +3,7 @@ import About from './components/about/About'
 import Blog from './components/blog/Blog'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
+import ProductDetails from './components/products/ProductDetails'
 import Products from './components/products/Products'
 import Registration from './components/registration/Registration'
 import Navbar from './shared/Navbar/Navbar'
@@ -16,6 +17,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<Home />}></Route>
 				<Route path='/blog' element={<Blog />}></Route>
+				<Route path='/products/:productId' element={<ProductDetails />}></Route>
 				<Route path='/about' element={<About />}></Route>
 				<Route path='/login' element={<Login />}></Route>
 				<Route path='/products' element={<Products />}></Route>
