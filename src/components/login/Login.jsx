@@ -27,9 +27,9 @@ const Login = () => {
 				<h1>Login</h1>
 
 				<form
-					onSubmit={(event) => {
+					onSubmit={async (event) => {
 						event.preventDefault()
-						signInWithEmailAndPassword(email, password)
+						await signInWithEmailAndPassword(email, password)
 					}}
 				>
 					<div className='field'>

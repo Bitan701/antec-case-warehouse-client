@@ -15,7 +15,11 @@ const Navbar = () => {
 				<CustomLink to='./blog'>blog</CustomLink>
 				<CustomLink to='./about'>about</CustomLink>
 				<CustomLink to='./products'>products</CustomLink>
-				<CustomLink to='./login'>login</CustomLink>
+				{user ? (
+					<p onClick={() => signOut(auth)}>{user.displayName}</p>
+				) : (
+					<CustomLink to='./login'>login</CustomLink>
+				)}
 			</div>
 		</div>
 	)
