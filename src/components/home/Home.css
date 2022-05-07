@@ -1,3 +1,7 @@
+figure {
+	margin: auto;
+}
+
 .textover {
 	position: relative;
 } /* REQUIRED */
@@ -19,4 +23,13 @@
 	color: white;
 	text-align: center;
 	background: rgba(0, 0, 0, 0.6);
+	font-size: 3vw;
+}
+
+footer {
+	color: aqua;
+	height: 50px;
+	display: grid;
+	place-items: center;
+	background-color: blue;
 }

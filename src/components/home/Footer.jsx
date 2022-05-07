@@ -1,7 +1,11 @@
-import React from 'react'
+import './Home.css'
 
 const Footer = () => {
-	return <div></div>
+	return (
+		<footer>
+			<p>Copyright © 2022 Antec. All rights reserved.</p>
+		</footer>
+	)
 }
 
 export default Footer

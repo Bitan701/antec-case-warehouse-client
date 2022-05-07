@@ -6,7 +6,7 @@ const Banner = () => {
 		<div>
 			<figure class='textover'>
 				<img src={banner} alt='banner' />
-				<figcaption>World Class casing for every PC</figcaption>
+				<figcaption>World Class Casing for every PC</figcaption>
 			</figure>
 		</div>
 	)
