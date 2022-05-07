@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Product from '../products/Product'
+import ProductSummary from '../products/ProductSummary'
 
 const HomeProducts = () => {
 	const [products, setProducts] = useState([])
@@ -16,7 +16,7 @@ const HomeProducts = () => {
 	return (
 		<div className='products'>
 			{products.slice(0, 6).map((product) => (
-				<Product key={product._id} product={product} />
+				<ProductSummary key={product._id} product={product} />
 			))}
 		</div>
 	)

@@ -41,12 +41,7 @@ const Product = ({ product }) => {
 				<p>Weight: {weight} </p>
 				<p>Warranty: {warranty} </p>
 			</div>
-			<button
-				onClick={() => navigateToServiceDetail(_id)}
-				className='btn btn-primary'
-			>
-				Book: {name}
-			</button>
+			<button onClick={() => navigateToServiceDetail(_id)}>Book: {name}</button>
 		</div>
 	)
 }
