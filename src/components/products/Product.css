@@ -36,3 +36,8 @@
 	width: fit-content;
 	cursor: pointer;
 }
+
+.product-details-info {
+	display: flex;
+	justify-content: center;
+}
