@@ -4,13 +4,14 @@ import { Link, useParams } from 'react-router-dom'
 const ProductDetails = () => {
 	const { productId } = useParams()
 	const [product, setProduct] = useState({})
+	const [quantity, setQuantity] = useState(0)
 
 	useEffect(() => {
 		const url = `http://localhost:5000/products/${productId}`
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => setProduct(data))
-	}, [productId])
+	}, [])
 
 	const handleUpdateUser = (event) => {
 		event.preventDefault()
@@ -33,20 +34,22 @@ const ProductDetails = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log('success', data)
-				alert('users added successfully!!!')
+				setQuantity(updatedUser.quantity)
 				event.target.reset()
 			})
 	}
 
 	return (
 		<div>
-			<h2>You are about to book: {product?.product?.name}</h2>
+			<h2>You are about to book: {product.product?.name}</h2>
 			<h2>Updating User: {product?.product?.name}</h2>
 			<form onSubmit={handleUpdateUser}>
 				<input
 					type='number'
 					name='order'
-					placeholder={`product available: ${product?.product?.quantity}`}
+					placeholder={`product available: ${
+						quantity === 0 ? product.product?.quantity : quantity
+					}`}
 					required
 				/>
 				<br />
