@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './Product.css'
 
-const HandleOrder = ({ product, setQuantity }) => {
+const HandleStock = ({ product, setQuantity }) => {
 	const { productId } = useParams()
+
 	const [delivered, setDelivered] = useState(false)
 	console.log(product.quantity)
 
@@ -11,7 +12,7 @@ const HandleOrder = ({ product, setQuantity }) => {
 		event.preventDefault()
 
 		const order = event.target.order.value
-		const quantityUpdate = parseInt(product?.quantity) - parseInt(order)
+		const quantityUpdate = parseInt(product?.quantity) + parseInt(order)
 
 		const updatedUser = { quantity: quantityUpdate }
 
@@ -28,7 +29,7 @@ const HandleOrder = ({ product, setQuantity }) => {
 			.then((data) => {
 				console.log('success', data)
 				event.target.reset()
-				setQuantity(product?.quantity - order)
+				setQuantity(quantityUpdate)
 				setDelivered(true)
 			})
 	}
@@ -41,11 +42,11 @@ const HandleOrder = ({ product, setQuantity }) => {
 				<form onSubmit={handleUpdateUser}>
 					<input type='number' name='order' required />
 					<br />
-					<input type='submit' value='Delivered' />
+					<input type='submit' value='Add Stock' />
 				</form>
 			)}
 		</div>
 	)
 }
 
-export default HandleOrder
+export default HandleStock

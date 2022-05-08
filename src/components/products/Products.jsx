@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Product from './Product'
 
 const Products = () => {
@@ -14,11 +15,14 @@ const Products = () => {
 	}, [])
 
 	return (
-		<div className='products'>
-			{products.map((product) => (
-				<Product key={product._id} product={product} />
-			))}
-		</div>
+		<>
+			<h3>Add another product?</h3>
+			<div className='products'>
+				{products.map((product) => (
+					<Product key={product._id} product={product} />
+				))}
+			</div>
+		</>
 	)
 }
 

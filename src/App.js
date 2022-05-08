@@ -3,6 +3,7 @@ import About from './components/about/About'
 import Blog from './components/blog/Blog'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
+import AddProduct from './components/products/AddProduct'
 import ProductDetails from './components/products/ProductDetails'
 import Products from './components/products/Products'
 import Registration from './components/registration/Registration'
@@ -22,6 +23,7 @@ function App() {
 				<Route path='/login' element={<Login />}></Route>
 				<Route path='/products' element={<Products />}></Route>
 				<Route path='/registration' element={<Registration />}></Route>
+				<Route path='/additem' element={<AddProduct />}></Route>
 				<Route path='*' element={<NotFound />}></Route>
 			</Routes>
 		</>

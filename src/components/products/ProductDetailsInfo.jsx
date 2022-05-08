@@ -1,10 +1,15 @@
+import { useState } from 'react'
 import HandleOrder from './HandleOrder'
+import HandleStock from './HandleStock'
 
 const ProductDetailsInfo = ({ product }) => {
 	const { name, weight, img, price, warranty } = product
 	const { dimension, formFactor, materials, sidePanel } =
 		product?.caseSpecification || {}
 	const { front, side, rear, top } = product?.fanSupport || {}
+
+	const [quantity, setQuantity] = useState(0)
+	const [addStock, setAddStock] = useState(false)
 
 	return (
 		<>
@@ -35,7 +40,18 @@ const ProductDetailsInfo = ({ product }) => {
 						<hr />
 						<p>Weight: {weight} </p>
 						<p>Warranty: {warranty} </p>
-						<HandleOrder product={product} />
+						<p>
+							Product Available: {quantity === 0 ? product?.quantity : quantity}
+						</p>
+						{addStock ? (
+							<HandleStock product={product} setQuantity={setQuantity} />
+						) : (
+							<HandleOrder product={product} setQuantity={setQuantity} />
+						)}
+						<p>Want to add stock instead? </p>
+						<button onClick={() => setAddStock(true)}>Click here</button>
+						{/* <HandleOrder product={product} setQuantity={setQuantity} />
+						<HandleStock product={product} setQuantity={setQuantity} /> */}
 					</div>
 				</div>
 			</div>
