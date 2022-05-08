@@ -20,7 +20,9 @@ const Navbar = () => {
 				{user ? (
 					<>
 						<Link to='./manage'>Manage</Link>
-						<p onClick={() => signOut(auth)}>{user.displayName}</p>
+						<p style={{ cursor: 'pointer' }} onClick={() => signOut(auth)}>
+							log-out
+						</p>
 					</>
 				) : (
 					<CustomLink to='./login'>login</CustomLink>

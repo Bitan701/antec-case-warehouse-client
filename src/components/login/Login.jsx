@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import {
+	useSignInWithEmailAndPassword,
+	useSignInWithGoogle,
+} from 'react-firebase-hooks/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../firebase.init'
 import './Login.css'
@@ -12,6 +15,8 @@ const Login = () => {
 
 	const [signInWithEmailAndPassword, user, loading, error] =
 		useSignInWithEmailAndPassword(auth)
+
+	const [signInWithGoogle] = useSignInWithGoogle(auth)
 
 	useEffect(() => {
 		setErrorMessage(error?.message)
@@ -28,6 +33,8 @@ const Login = () => {
 		<div className='centerLoginPage'>
 			<div className='loginPage'>
 				<h1>Login</h1>
+
+				<button onClick={() => signInWithGoogle()}>Sign in with Google</button>
 
 				<form
 					onSubmit={async (event) => {

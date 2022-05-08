@@ -19,7 +19,17 @@ const HomeProducts = () => {
 			{products.slice(0, 6).map((product) => (
 				<ProductSummary key={product._id} product={product} />
 			))}
-			<Link to='./products'>Manage Products</Link>
+
+			<Link
+				style={{
+					textDecoration: 'none',
+					fontSize: 'larger',
+					marginBottom: '5rem',
+				}}
+				to='./products'
+			>
+				Manage Products
+			</Link>
 		</div>
 	)
 }
