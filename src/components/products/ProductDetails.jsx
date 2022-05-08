@@ -7,7 +7,7 @@ const ProductDetails = () => {
 	const [quantity, setQuantity] = useState(0)
 
 	useEffect(() => {
-		const url = `http://localhost:5000/products/${productId}`
+		const url = `https://secure-fjord-54361.herokuapp.com/products/${productId}`
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => setProduct(data))
@@ -23,7 +23,7 @@ const ProductDetails = () => {
 		const updatedUser = { quantity: quantityUpdate }
 
 		// send data to the server
-		const url = `http://localhost:5000/products/${productId}`
+		const url = `https://secure-fjord-54361.herokuapp.com/products/${productId}`
 		fetch(url, {
 			method: 'PUT',
 			headers: {
