@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import './Product.css'
 
-const Product = ({ product }) => {
+const Product = ({ product, handleDelete }) => {
 	const { _id, name, weight, img, price, warranty } = product
 	const { dimension, formFactor, materials, sidePanel } =
 		product.caseSpecification
@@ -42,6 +42,9 @@ const Product = ({ product }) => {
 				<p>Warranty: {warranty} </p>
 			</div>
 			<button onClick={() => navigateToServiceDetail(_id)}>Book: {name}</button>
+			<button onClick={() => handleDelete(product._id)}>
+				Delete this Item
+			</button>
 		</div>
 	)
 }
