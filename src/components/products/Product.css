@@ -12,3 +12,27 @@
 
 .product-top img {
 }
+
+.details-product {
+	display: flex;
+	justify-content: center;
+}
+
+.details-product .product {
+	background-color: white;
+	display: grid;
+	grid-template-columns: 1fr;
+	place-items: center;
+}
+
+.details-product .product form {
+	background-color: white;
+	display: grid;
+	grid-template-columns: 1fr;
+	place-items: center;
+}
+
+.details-product .product input {
+	width: fit-content;
+	cursor: pointer;
+}
