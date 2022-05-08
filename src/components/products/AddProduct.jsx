@@ -1,6 +1,10 @@
 import React from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../../firebase.init'
 
 const AddProduct = () => {
+	const [user, loading] = useAuthState(auth)
+
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		const name = event.target.name.value
@@ -22,8 +26,9 @@ const AddProduct = () => {
 		const quantity = event.target.quantity.value
 		const supplier = ''
 		const sold = ''
+		const email = user.email
 
-		const user = {
+		const newproduct = {
 			name,
 			caseSpecification: {
 				dimension,
@@ -47,6 +52,7 @@ const AddProduct = () => {
 			quantity,
 			supplier,
 			sold,
+			email,
 		}
 
 		// send data to the server
@@ -55,7 +61,7 @@ const AddProduct = () => {
 			headers: {
 				'content-type': 'application/json',
 			},
-			body: JSON.stringify(user),
+			body: JSON.stringify(newproduct),
 		})
 			.then((res) => res.json())
 			.then((data) => {

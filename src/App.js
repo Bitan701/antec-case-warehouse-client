@@ -6,6 +6,7 @@ import Login from './components/login/Login'
 import AddProduct from './components/products/AddProduct'
 import ProductDetails from './components/products/ProductDetails'
 import Products from './components/products/Products'
+import ManageProducts from './components/products/signed/ManageProducts'
 import Registration from './components/registration/Registration'
 import RequireAuth from './custom/RequireAuth'
 import Navbar from './shared/Navbar/Navbar'
@@ -27,6 +28,14 @@ function App() {
 					element={
 						<RequireAuth>
 							<Products />
+						</RequireAuth>
+					}
+				></Route>
+				<Route
+					path='/manage'
+					element={
+						<RequireAuth>
+							<ManageProducts />
 						</RequireAuth>
 					}
 				></Route>
