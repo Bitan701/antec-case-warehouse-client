@@ -33,3 +33,13 @@ footer {
 	place-items: center;
 	background-color: blue;
 }
+
+.others {
+	margin-top: 5rem;
+	display: grid;
+	place-items: center;
+}
+
+.others img {
+	max-width: 700px;
+}

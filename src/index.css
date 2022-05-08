@@ -39,3 +39,21 @@ button::after {
 	display: grid;
 	place-items: center;
 }
+
+@media only screen and (min-width: 880px) and (max-width: 1024px) {
+	.products {
+		background-color: white;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		place-items: center;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.products {
+		background-color: white;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		place-items: center;
+	}
+}
