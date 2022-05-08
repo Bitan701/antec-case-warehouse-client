@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import './Product.css'
 
 const HandleOrder = ({ product }) => {
 	const { productId } = useParams()
 	const [quantity, setQuantity] = useState(0)
+	const [delivered, setDelivered] = useState(false)
 	console.log(product.quantity)
 	console.log(quantity)
 
@@ -28,18 +30,23 @@ const HandleOrder = ({ product }) => {
 			.then((data) => {
 				console.log('success', data)
 				event.target.reset()
-				setQuantity(product?.quantity - 1)
+				setQuantity(product?.quantity - order)
+				setDelivered(true)
 			})
 	}
 
 	return (
-		<div>
-			<h1>Quantity: {quantity === 0 ? product?.quantity : quantity}</h1>
-			<form onSubmit={handleUpdateUser}>
-				<input type='number' name='order' required />
-				<br />
-				<input type='submit' value='Order Product' />
-			</form>
+		<div className='order-container'>
+			<p>Product Available: {quantity === 0 ? product?.quantity : quantity}</p>
+			{delivered ? (
+				<></>
+			) : (
+				<form onSubmit={handleUpdateUser}>
+					<input type='number' name='order' required />
+					<br />
+					<input type='submit' value='Delivered' />
+				</form>
+			)}
 		</div>
 	)
 }
