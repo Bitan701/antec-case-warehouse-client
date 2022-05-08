@@ -9,7 +9,7 @@ const Navbar = () => {
 
 	return (
 		<div className='navbar'>
-			<p>title</p>
+			<p>Antec</p>
 			<div className='navbar-links'>
 				<CustomLink to='./'>home</CustomLink>
 				<CustomLink to='./blog'>blog</CustomLink>

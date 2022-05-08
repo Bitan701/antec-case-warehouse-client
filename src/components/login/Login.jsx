@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../firebase.init'
 import './Login.css'
 
@@ -21,6 +21,9 @@ const Login = () => {
 		user && navigate(`/`, { replace: true })
 	}, [user])
 
+	const location = useLocation()
+	const from = location?.state?.from?.pathname || '/'
+
 	return (
 		<div className='centerLoginPage'>
 			<div className='loginPage'>
@@ -30,6 +33,7 @@ const Login = () => {
 					onSubmit={async (event) => {
 						event.preventDefault()
 						await signInWithEmailAndPassword(email, password)
+						await navigate(from, { replace: true })
 					}}
 				>
 					<div className='field'>
