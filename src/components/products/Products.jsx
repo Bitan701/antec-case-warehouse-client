@@ -35,8 +35,16 @@ const Products = () => {
 
 	return (
 		<>
-			<h3>Add another product?</h3>
-			<Link to='/additem'>Add another product</Link>
+			<Link
+				style={{
+					textDecoration: 'none',
+					fontSize: 'larger',
+					marginTop: '2rem',
+				}}
+				to='/additem'
+			>
+				Add another product
+			</Link>
 			<div className='products'>
 				{products.map((product) => (
 					<Product

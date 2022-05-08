@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {
 	useCreateUserWithEmailAndPassword,
+	useSendEmailVerification,
 	useUpdateProfile,
 } from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom'
@@ -13,6 +14,8 @@ const Registration = () => {
 	const [rePassword, setRePassword] = useState('')
 	const [errorMessage, setErrorMessage] = useState('')
 	const navigate = useNavigate()
+
+	const [sendEmailVerification] = useSendEmailVerification(auth)
 
 	const [createUserWithEmailAndPassword, user, loading, error] =
 		useCreateUserWithEmailAndPassword(auth)
@@ -36,6 +39,7 @@ const Registration = () => {
 						event.preventDefault()
 						await createUserWithEmailAndPassword(email, password)
 						await updateProfile({ displayName })
+						await sendEmailVerification()
 					}}
 				>
 					<div className='field'>

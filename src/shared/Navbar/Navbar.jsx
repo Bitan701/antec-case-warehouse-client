@@ -19,7 +19,7 @@ const Navbar = () => {
 				<CustomLink to='./products'>products</CustomLink>
 				{user ? (
 					<>
-						<Link to='./manage'>Manage</Link>
+						<Link to='./manage'>My-Items</Link>
 						<p style={{ cursor: 'pointer' }} onClick={() => signOut(auth)}>
 							log-out
 						</p>

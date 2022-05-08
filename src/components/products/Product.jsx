@@ -41,7 +41,9 @@ const Product = ({ product, handleDelete }) => {
 				<p>Weight: {weight} </p>
 				<p>Warranty: {warranty} </p>
 			</div>
-			<button onClick={() => navigateToServiceDetail(_id)}>Book: {name}</button>
+			<button onClick={() => navigateToServiceDetail(_id)}>
+				Details: {name}
+			</button>
 			<button onClick={() => handleDelete(product._id)}>
 				Delete this Item
 			</button>
