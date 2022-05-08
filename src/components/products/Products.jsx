@@ -17,6 +17,7 @@ const Products = () => {
 	return (
 		<>
 			<h3>Add another product?</h3>
+			<Link to='/additem'>Add another product</Link>
 			<div className='products'>
 				{products.map((product) => (
 					<Product key={product._id} product={product} />

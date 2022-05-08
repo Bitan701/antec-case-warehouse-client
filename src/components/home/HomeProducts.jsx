@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import ProductSummary from '../products/ProductSummary'
 
 const HomeProducts = () => {
@@ -18,6 +19,7 @@ const HomeProducts = () => {
 			{products.slice(0, 6).map((product) => (
 				<ProductSummary key={product._id} product={product} />
 			))}
+			<Link to='./products'>Manage Products</Link>
 		</div>
 	)
 }
